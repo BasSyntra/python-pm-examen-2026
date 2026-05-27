@@ -45,4 +45,3 @@ def test_add_reject_negatives():
         stringcalc.add("1,-2,-3")
 
     assert str(exc.value) == "negatives not allowed: -2 -3"
-# change to trigger workflow
