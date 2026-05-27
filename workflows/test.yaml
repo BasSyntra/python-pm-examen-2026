@@ -1,0 +1,20 @@
+name: Python Unit Tests
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clone the repository
+      uses: actions/checkout@v6
+
+    - name: Set up uv and Python 3.14
+      uses: astral-sh/setup-uv@v7
+      with:
+        python-version: '3.14'
+
+    - name: Install dependencies
+      run: uv add pytest
+
+    - name: Test
+      run: uv run pytest
